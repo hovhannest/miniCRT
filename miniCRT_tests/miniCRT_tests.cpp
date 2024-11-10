@@ -1,6 +1,19 @@
 
 #include "minicrt.h"
 
+#include <EASTL/string.h>
+#include <EASTL/vector.h>
+
+void* __cdecl operator new[](size_t size, const char* name, int flags, unsigned debugFlags, const char* file, int line)
+{
+    return new uint8_t[size];
+}
+void* __cdecl operator new[](unsigned __int64 size, unsigned __int64, unsigned __int64, char const*, int, unsigned int, char const*, int)
+{
+    return new uint8_t[size];
+}
+
+
 #pragma  warning(push)
 #pragma warning(disable : 4996)
 #include "test_alloc.h"
@@ -66,6 +79,20 @@ void WinMainCRTStartup() {
 
     static int i = 0;
     static A a;
+
+    eastl::string str1 = "Hello, EASTL!";
+    str1 += " EEee!\n";
+
+    eastl::vector<eastl::string> vec;
+    vec.push_back("asd1\n");
+    vec.push_back("asd2\n");
+
+    printf(str1.c_str());
+
+    for each (auto var in vec)
+    {
+        printf(var.c_str());
+    }
 
     mini_exit();
 	ExitProcess(0);
