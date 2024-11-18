@@ -30,7 +30,7 @@ void* operator new[](std::size_t sz)
     return _new(sz);
 }
 
-void* operator new (std::size_t sz, unsigned __int64 arg)
+void* operator new (std::size_t sz, size_t arg)
 {
     return _new(sz);
 }
@@ -55,7 +55,7 @@ void operator delete[](void* ptr)
     _delete(ptr);
 }
 
-void operator delete (void* ptr, unsigned __int64 arg)
+void operator delete (void* ptr, size_t arg)
 {
     _delete(ptr);
 }
