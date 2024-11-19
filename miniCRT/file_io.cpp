@@ -5,6 +5,7 @@
 extern "C" FILE* __cdecl fopen(const char* filename, const char* mode) {
     DWORD access = 0;
     DWORD creation = 0;
+    DWORD shareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
 
     if (strchr(mode, 'r')) {
         access |= GENERIC_READ;
@@ -18,14 +19,18 @@ extern "C" FILE* __cdecl fopen(const char* filename, const char* mode) {
         access |= FILE_APPEND_DATA;
         creation = OPEN_ALWAYS;
     }
+    if (strchr(mode, '+') || strchr(&mode[1], '+')) {
+        access |= GENERIC_READ | GENERIC_WRITE;
+    }
 
-    HANDLE file = CreateFileA(filename, access, 0, NULL, creation, FILE_ATTRIBUTE_NORMAL, NULL);
+    HANDLE file = CreateFileA(filename, access, shareMode, NULL, creation, FILE_ATTRIBUTE_NORMAL, NULL);
     return (FILE*)(file != INVALID_HANDLE_VALUE ? file : NULL);
 }
 
 extern "C" FILE * __cdecl wfopen(const wchar_t* filename, const wchar_t* mode) {
     DWORD access = 0;
     DWORD creation = 0;
+    DWORD shareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
 
     if (wcschr(mode, L'r')) {
         access |= GENERIC_READ;
@@ -39,8 +44,11 @@ extern "C" FILE * __cdecl wfopen(const wchar_t* filename, const wchar_t* mode) {
         access |= FILE_APPEND_DATA;
         creation = OPEN_ALWAYS;
     }
+    if (wcschr(mode, L'+') || wcschr(&mode[1], L'+')) {
+        access |= GENERIC_READ | GENERIC_WRITE;
+    }
 
-    HANDLE file = CreateFileW(filename, access, 0, NULL, creation, FILE_ATTRIBUTE_NORMAL, NULL);
+    HANDLE file = CreateFileW(filename, access, shareMode, NULL, creation, FILE_ATTRIBUTE_NORMAL, NULL);
     return (FILE*)(file != INVALID_HANDLE_VALUE ? file : NULL);
 }
 
@@ -169,4 +177,17 @@ extern "C" int __cdecl wrename(const wchar_t* oldname, const wchar_t* newname) {
     else {
         return -1; // Failure
     }
+}
+
+extern "C" int __cdecl fflush(FILE * file) {
+    if (!file) {
+        return EOF; // Invalid file pointer
+    }
+
+    // Flush the file buffers
+    if (!FlushFileBuffers((HANDLE)file)) {
+        return EOF; // Flush failed
+    }
+
+    return 0; // Success
 }

@@ -51,6 +51,24 @@
     <ClCompile Include="stl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ftol3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigdiv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigdvrm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigmul.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigrem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigshift.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\minicrt.h">

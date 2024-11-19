@@ -288,7 +288,7 @@ extern "C" int __cdecl PRINTF_FN (
                     }
 
                     // Extract the integer part
-                    unsigned long long integerPart = (unsigned long long)num;
+                    unsigned long integerPart = (unsigned long)num;
                     double fractionalPart = num - integerPart;
 
                     // Convert integer part to string

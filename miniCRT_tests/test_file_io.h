@@ -101,6 +101,7 @@ void test_fgets() {
     // Write data to file and reset file pointer to beginning
     fwrite(test_data, sizeof(char), strlen(test_data), file);
     fseek(file, 0, SEEK_SET);
+    fflush(file);
 
     char buffer[50];
 

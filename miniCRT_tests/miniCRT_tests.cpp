@@ -1,4 +1,6 @@
 
+// from https://github.com/SpoilerScriptsGroup/RetrievAL/blob/3b56fd0238dc9046e04a4dd982242b0f0ba39264/SpoilerAL-winmm.dll/crt/math/ftol3.c#L264
+
 #include "minicrt.h"
 
 #include <EASTL/string.h>
@@ -70,12 +72,12 @@ void WinMainCRTStartup() {
     test_fopen_invalid_mode();
     test_fclose_invalid_file();
     test_fclose_valid_file();
+    test_fgets();
 
     test_memcpy();
     test_memmove();
     test_memset();
     test_memcmp();
-    test_fgets();
 
     static int i = 0;
     static A a;

@@ -75,6 +75,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -141,6 +142,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -194,7 +196,7 @@
       <Optimization>MinSpace</Optimization>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <FloatingPointModel>Strict</FloatingPointModel>
+      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -297,7 +299,7 @@
       <LanguageStandard_C>stdc11</LanguageStandard_C>
       <FloatingPointExceptions>
       </FloatingPointExceptions>
-      <FloatingPointModel>Strict</FloatingPointModel>
+      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -313,7 +315,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="atexit.cpp" />
+    <ClCompile Include="bigdiv.c" />
+    <ClCompile Include="bigdvrm.c" />
+    <ClCompile Include="bigmul.c" />
+    <ClCompile Include="bigrem.c" />
+    <ClCompile Include="bigshift.c" />
     <ClCompile Include="file_io.cpp" />
+    <ClCompile Include="ftol3.c" />
     <ClCompile Include="malloc.cpp" />
     <ClCompile Include="mem.cpp" />
     <ClCompile Include="new_delete.cpp" />
@@ -332,5 +340,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>
