@@ -15,8 +15,8 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="mini_exe.vcxproj" File="mini_exe.vcxproj" ReplaceParameters="true">
-      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">mini_exe.vcxproj.filters</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="main.cpp">main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.vcxproj.filters">mini_exe.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.cpp">main.cpp</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

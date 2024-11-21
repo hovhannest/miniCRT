@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miniCRT_tests", "miniCRT_te
 		{232206E7-6FCF-4A3F-8CCD-18557C208824} = {232206E7-6FCF-4A3F-8CCD-18557C208824}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mini_dll1", "mini_dll1\mini_dll1.vcxproj", "{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -44,6 +46,18 @@ Global
 		{679DDA7E-DDE5-4675-A999-5F8104AEDAD8}.Release|x64.Build.0 = Release|x64
 		{679DDA7E-DDE5-4675-A999-5F8104AEDAD8}.Release|x86.ActiveCfg = Release|Win32
 		{679DDA7E-DDE5-4675-A999-5F8104AEDAD8}.Release|x86.Build.0 = Release|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Debug|x64.ActiveCfg = Debug|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Debug|x64.Build.0 = Debug|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Debug|x86.Build.0 = Debug|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.RelDebug|x64.ActiveCfg = RelDebug|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.RelDebug|x64.Build.0 = RelDebug|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.RelDebug|x86.ActiveCfg = RelDebug|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.RelDebug|x86.Build.0 = RelDebug|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Release|x64.ActiveCfg = Release|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Release|x64.Build.0 = Release|x64
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Release|x86.ActiveCfg = Release|Win32
+		{AB0B5ADC-FBE9-4152-B2E2-139CECE8B5A7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
