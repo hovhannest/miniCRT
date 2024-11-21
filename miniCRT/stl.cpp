@@ -29,3 +29,12 @@ extern "C" int __cdecl __stdio_common_vfprintf(
     // Use vfprintf to write the formatted string
     return printf(_Format, _ArgList);
 }
+
+void* __cdecl operator new[](size_t size, const char* name, int flags, unsigned debugFlags, const char* file, int line)
+{
+    return new char[size];
+}
+void* __cdecl operator new[](size_t size, size_t, size_t, char const*, int, unsigned int, char const*, int)
+{
+    return new char[size];
+}
