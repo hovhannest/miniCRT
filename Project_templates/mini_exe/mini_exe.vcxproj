@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -166,7 +166,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <OmitFramePointers>true</OmitFramePointers>
       <Optimization>MinSpace</Optimization>
@@ -200,7 +200,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <SupportJustMyCode>true</SupportJustMyCode>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -237,7 +237,7 @@
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ControlFlowGuard>false</ControlFlowGuard>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <FloatingPointExceptions>
       </FloatingPointExceptions>
       <OmitFramePointers>true</OmitFramePointers>
@@ -275,7 +275,7 @@
       <Optimization>MinSpace</Optimization>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <OmitFramePointers>true</OmitFramePointers>
@@ -320,7 +320,7 @@
       <ControlFlowGuard>false</ControlFlowGuard>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)miniCRT/miniCRT/include;$(SolutionDir)miniCRT/EASTL/include;$(SolutionDir)miniCRT/include;$(SolutionDir)EASTL\include;$(SolutionDir)build\_deps\eabase-src\include\Common</AdditionalIncludeDirectories>
       <FloatingPointExceptions>
       </FloatingPointExceptions>
       <OmitFramePointers>true</OmitFramePointers>
