@@ -38,13 +38,40 @@ else()
 endif()
 
 set_target_properties(EASTL PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/${ARCH_DIR}/$<CONFIG>
-    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/${ARCH_DIR}/$<CONFIG>
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/${ARCH_DIR}/$<CONFIG>
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../${ARCH_DIR}/$<CONFIG>
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../${ARCH_DIR}/$<CONFIG>
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../${ARCH_DIR}/$<CONFIG>
 )
 
 # Add custom target to build all configurations for both 32-bit and 64-bit architectures
 add_custom_target(build_all
+    COMMAND ${CMAKE_COMMAND} -S ${CMAKE_SOURCE_DIR} -B ${CMAKE_BINARY_DIR}/build_x64 -A x64
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config Debug
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config Release
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config MinSizeRel
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config RelWithDebInfo
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config RelDebug
+    
+    
+    COMMAND ${CMAKE_COMMAND} -S ${CMAKE_SOURCE_DIR} -B ${CMAKE_BINARY_DIR}/build_x86 -A Win32
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config Debug
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config Release
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config MinSizeRel
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config RelWithDebInfo
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config RelDebug
+
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Debug
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Release
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/RelDebug
+
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Debug
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Release
+    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/RelDebug
+)
+
+
+# Add custom target to build all configurations for both 32-bit and 64-bit architectures
+add_custom_target(build_EASTL
     COMMAND ${CMAKE_COMMAND} -S ${CMAKE_SOURCE_DIR} -B ${CMAKE_BINARY_DIR}/build_x64 -A x64
     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config Debug
     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x64 --config Release
