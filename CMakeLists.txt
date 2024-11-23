@@ -60,13 +60,13 @@ add_custom_target(build_all
     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config RelWithDebInfo
     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/build_x86 --config RelDebug
 
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Debug
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Release
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/RelDebug
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Debug
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/Release
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=x64 /p:OutDir=${CMAKE_BINARY_DIR}/../x64/RelDebug
 
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Debug
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Release
-    COMMAND MSBuild.exe ${CMAKE_SOURCE_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/RelDebug
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Debug
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=Release /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/Release
+    COMMAND MSBuild.exe ${CMAKE_CURRENT_LIST_DIR}/miniCRT/miniCRT.vcxproj /p:Configuration=RelDebug /p:Platform=Win32 /p:OutDir=${CMAKE_BINARY_DIR}/../Win32/RelDebug
 )
 
 
