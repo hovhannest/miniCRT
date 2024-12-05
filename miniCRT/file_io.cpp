@@ -27,7 +27,7 @@ extern "C" FILE* __cdecl fopen(const char* filename, const char* mode) {
     return (FILE*)(file != INVALID_HANDLE_VALUE ? file : NULL);
 }
 
-extern "C" FILE * __cdecl wfopen(const wchar_t* filename, const wchar_t* mode) {
+extern "C" FILE * __cdecl _wfopen(const wchar_t* filename, const wchar_t* mode) {
     DWORD access = 0;
     DWORD creation = 0;
     DWORD shareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
@@ -151,7 +151,7 @@ extern "C" int __cdecl remove(const char* filename) {
     }
 }
 
-extern "C" int __cdecl wremove(const wchar_t* filename) {
+extern "C" int __cdecl _wremove(const wchar_t* filename) {
     // Use DeleteFileW to delete the file specified by filename (wide char version)
     if (DeleteFileW(filename) != 0) {
         return 0; // Success
@@ -170,7 +170,7 @@ extern "C" int __cdecl rename(const char* oldname, const char* newname) {
     }
 }
 
-extern "C" int __cdecl wrename(const wchar_t* oldname, const wchar_t* newname) {
+extern "C" int __cdecl _wrename(const wchar_t* oldname, const wchar_t* newname) {
     if (MoveFileW(oldname, newname) != 0) {
         return 0; // Success
     }
