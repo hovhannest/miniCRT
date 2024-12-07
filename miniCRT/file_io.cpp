@@ -191,3 +191,34 @@ extern "C" int __cdecl fflush(FILE * file) {
 
     return 0; // Success
 }
+
+extern "C" size_t __cdecl fread(void* buffer, size_t size, size_t count, FILE * file) {
+    if (!file || !buffer || size == 0 || count == 0) {
+        return 0;
+    }
+
+    DWORD bytesToRead = static_cast<DWORD>(size * count);
+    DWORD bytesRead = 0;
+
+    BOOL success = ReadFile((HANDLE)file, buffer, bytesToRead, &bytesRead, NULL);
+
+    if (!success) {
+        return 0;
+    }
+
+    // Return the number of elements (count) successfully read
+    return bytesRead / size;
+}
+
+extern "C" long __cdecl ftell(FILE * file) {
+    if (!file) {
+        return -1;
+    }
+
+    DWORD position = SetFilePointer((HANDLE)file, 0, NULL, FILE_CURRENT);
+    if (position == INVALID_SET_FILE_POINTER && GetLastError() != NO_ERROR) {
+        return -1;
+    }
+
+    return static_cast<long>(position);
+}
